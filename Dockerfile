@@ -9,4 +9,3 @@ RUN install_packages curl ca-certificates && update-ca-certificates
 USER 1001
 HEALTHCHECK --interval=15s --timeout=3s --start-period=10s --retries=3 \
   CMD curl -fsS http://127.0.0.1:2379/health | grep -q '"health":"true"' || exit 1
-EOF
